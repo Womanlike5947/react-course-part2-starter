@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+types
+
+# Eslint
+.eslintcache
+
+# Npm
+.npmrc
