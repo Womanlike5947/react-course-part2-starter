@@ -5,6 +5,7 @@ import LoginStatus from './LoginStatus';
 const NavBar = () => {
   // #regions Context
   const { tasks } = useContext(TasksContext);
+
   // #endregion
   return (
     <nav className="navbar d-flex justify-content-between">
