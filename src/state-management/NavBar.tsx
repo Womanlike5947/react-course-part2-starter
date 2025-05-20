@@ -1,14 +1,14 @@
-import LoginStatus from './LoginStatus';
-import { useTasks } from './tasks/TaskList';
+import LoginStatus from './auth/LoginStatus';
+import useCounterStore from './counter/store';
 
 const NavBar = () => {
   // #regions Context
-  const { tasks } = useTasks();
+  const { counter } = useCounterStore();
 
   // #endregion
   return (
     <nav className="navbar d-flex justify-content-between">
-      <span className="badge text-bg-secondary">{tasks.length}</span>
+      <span className="badge text-bg-secondary">{counter}</span>
       <LoginStatus />
     </nav>
   );
