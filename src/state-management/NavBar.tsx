@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import TasksContext from './contexts/tasksContext';
+import useTasks from './hooks/useTasks';
 import LoginStatus from './LoginStatus';
 
 const NavBar = () => {
   // #regions Context
-  const { tasks } = useContext(TasksContext);
+  const { tasks } = useTasks();
 
   // #endregion
   return (
