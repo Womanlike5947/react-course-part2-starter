@@ -1,15 +1,16 @@
-import useAuth from './useAuth';
+import useAuthStore from './store';
 
 const LoginStatus = () => {
-  // 👇🏼custom React Context Hook
-  const { username, dispatch } = useAuth();
+  // #region Zustand
+  const { username, login, logout } = useAuthStore();
+  // #endregion
 
   if (username)
     return (
       <>
         <div>
           <span className="mx-2">{username}</span>
-          <a onClick={() => dispatch({ type: 'LOGOUT' })} href="#">
+          <a onClick={() => logout()} href="#">
             Logout
           </a>
         </div>
@@ -17,9 +18,7 @@ const LoginStatus = () => {
     );
   return (
     <div>
-      <a
-        onClick={() => dispatch({ type: 'LOGIN', username: 'holly.bishop' })}
-        href="#">
+      <a onClick={() => login('holly.bishop')} href="#">
         Login
       </a>
     </div>
